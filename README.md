@@ -1,4 +1,4 @@
-# Google Drive Folder Watcher
+# The AI Agent Watcher
 
 # ⚠️ **Warning:** This project is under heavy development and may be unstable.
 
@@ -11,6 +11,7 @@ A Python-based application that monitors a specific folder in Google Drive for r
 - **Python 3.7 or higher** installed on your machine.
 - A **Google account** with access to Google Drive.
 - **Google Cloud Project** with Google Drive API enabled.
+- A **Notion account** with access to the Notion API.
 
 ## Installation
 
@@ -36,32 +37,11 @@ A Python-based application that monitors a specific folder in Google Drive for r
 
 ## Setup Google Drive API
 
-1. **Create a Google Cloud Project**
+For detailed instructions on setting up the Google Drive API, please refer to the [Google Drive Setup Documentation](docs/GOOGLE_DRIVE_SETUP.md).
 
-   - Navigate to the [Google Cloud Console](https://console.cloud.google.com/).
-   - Click on the project dropdown and select **New Project**.
-   - Enter a project name and click **Create**.
+## Setup Notion API
 
-2. **Enable Google Drive API**
-
-   - In the [APIs & Services Dashboard](https://console.cloud.google.com/apis/dashboard), click **Enable APIs and Services**.
-   - Search for "Google Drive API" and select it.
-   - Click **Enable**.
-
-3. **Create OAuth Credentials**
-
-   - Go to **APIs & Services** > **Credentials**.
-   - Click **Create Credentials** > **OAuth client ID**.
-   - Select **Desktop app** and provide a name.
-   - Click **Create** and download the `credentials.json` file.
-   - Create a `auth` folder in the root of the project.
-   - Place the `credentials.json` file in the `auth` folder.
-   - Create a `auth.yaml` file in the `auth` folder.
-   - Add the following content to the `auth.yaml` file:
-
-   ```yaml
-   drive: FILE_NAME
-   ```
+For detailed instructions on setting up the Notion API, please refer to the [Notion Setup Documentation](NOTION_SETUP.md).
 
 ## Configuration
 
@@ -73,6 +53,16 @@ A Python-based application that monitors a specific folder in Google Drive for r
 
    ```yaml
    drive_folder: YOUR_FOLDER_ID
+   ```
+
+2. **Specify Notion Configuration**
+
+   - Create a `notion.yaml` file in the root of the project.
+   - Add the following content to the `notion.yaml` file:
+
+   ```yaml
+   notion_token: YOUR_INTEGRATION_TOKEN
+   database_id: YOUR_DATABASE_ID
    ```
 
 ## Usage
